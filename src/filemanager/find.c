@@ -643,11 +643,8 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
         input_new (y1++, x1, input_get_default_colors (), cw, INPUT_LAST_TEXT, "name",
                               INPUT_COMPLETE_FILENAMES | INPUT_COMPLETE_CD);
     add_widget (find_dlg, in_name);
-    
-    //cbox_position = FIND_Y - 5;
 
-    only_directories_cbox = check_new (5, 3, options.only_directories, file_only_directories_label);
-    add_widget (find_dlg, only_directories_cbox);
+    
                    
 
     /* Start 2nd column */
@@ -672,6 +669,9 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
     file_case_sens_cbox = check_new (y1++, x1, options.file_case_sens, file_case_label);
     add_widget (find_dlg, file_case_sens_cbox);
+
+    only_directories_cbox = check_new (y1++, x1, options.only_directories, file_only_directories_label);
+    add_widget (find_dlg, only_directories_cbox);
 
 #ifdef HAVE_CHARSET
     file_all_charsets_cbox =
